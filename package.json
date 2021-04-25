@@ -1,0 +1,32 @@
+{
+  "name": "api_calendar",
+  "version": "1.0.0",
+  "description": "API calendario para agendamento de visitas",
+  "main": "index.js",
+  "scripts": {
+    "prod": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fernando-Ligabue/api_calendario.git"
+  },
+  "keywords": [
+    "API",
+    "calendario"
+  ],
+  "author": "Fernando Ligabue",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fernando-Ligabue/api_calendario/issues"
+  },
+  "homepage": "https://github.com/Fernando-Ligabue/api_calendario#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.12.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
