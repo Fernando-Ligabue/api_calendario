@@ -7,12 +7,12 @@ const Agendamento = mongoose.model('Agendamento',
             required: true,
             trim: true
         },
-        imovel: {
+        imovel_id: {
             type: Number,
             required: true,
             trim: true
         },
-        data: {
+        date: {
             type: Date,
             required: true,
             trim: true

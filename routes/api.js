@@ -1,6 +1,6 @@
-var express = require('express')
-var router = express.Router()
-const agendamentoController = require("../controllers/agendamentoController.js")
+var express = require('express');
+var router = express.Router();
+const agendamentoController = require("../controllers/agendamentoController.js");
 
 
 router.use(function timeLog(req, res, next) {

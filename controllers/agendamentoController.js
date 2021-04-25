@@ -7,7 +7,7 @@ const show = (req, res) => {
 }
 
 const store = (req, res) => {
-    const agendamento = new Agendamento({ cliente: req.body.cliente, imovel: req.body.imovel, data: req.body.date });
+    const agendamento = new Agendamento({ cliente: req.body.cliente, imovel_id: req.body.imovel_id, date: req.body.date });
     agendamento.save().then(() => {
         console.log('Agendamento salvo com sucesso!!')
         res.status(201).json({ error: 'Agendamento criado na base de dados com sucesso!!' })
