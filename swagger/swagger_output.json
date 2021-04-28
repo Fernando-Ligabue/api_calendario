@@ -1,0 +1,204 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "REST API",
+    "description": "Documentação de API utiizada para agendamentos de visitas e outros serviços. Possibilita agendar, editar e excluir registros efetuados. Utiliza protocolo HTTP com os verbos GET, POST, PUT e DELETE."
+  },
+  "host": "localhost:8001",
+  "basePath": "/",
+  "tags": [{
+    "Description" : "Agendamentos a imóveis da Flag Real Estate"
+  }],
+  "schemes": [
+    "http"
+  ],
+  "consumes": [],
+  "produces": [],
+  "paths": {
+    "/api/agendamentos": {
+      "get": {
+        "tags": [
+          {
+          "description" : "Busca todos os agendamentos de visita efetuados."
+        }
+      ],
+        "description": "Rota para solicitação de todos os agendamentos para visita efetuados.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Agendamentos apresentados com sucesso!"
+          },
+          "400": {
+            "description": "Ocorreu erro ao executar a sua solicitação."
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          {
+          "description" : "Insere agendamento ao calendario."
+        }
+      ],
+        "description": "Rota para inclusão de informações dos agendamentos para visita (Data, hora, cliente e imóvel solicitado).",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "cliente": {
+                  "type": "string",
+                  "example": "User Test"
+                },
+                "imovel_id": {
+                  "type": "number",
+                  "example": "1"
+                },
+                "date": {
+                  "type": "date",
+                  "example": "YYYY-MM-DD HH:MM"
+                },
+                "created_at": {
+                  "type": "date",
+                  "example": "null"
+                },
+                "updated_at": {
+                  "type": "date",
+                  "example": "null"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "201": {
+            "description": "Agendamento efetuado com sucesso!!"
+          },
+          "400": {
+            "description": "Ocorreu erro ao efetuar o agendamento!!"
+          }
+        }
+      }
+    },
+    "/api/agendamentos/{id}": {
+      "get": {
+        "tags": [
+          {
+          "description" : "Busca de um agendamento específico por ID"
+        }
+      ],
+        "description": "Rota para solicitação de dados relativos a um agendamento específico, identificado pelo ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "201": {
+            "description": "Solicitação efetuada com sucesso!!"
+          },
+          "400": {
+            "description": "Ocorreu erro ao efetuar a sua requisição!"
+          }
+        }
+      }
+    },
+    "/api/agendamentos/{_id}": {
+      "put": {
+        "tags": [
+          {
+          "description" : "Edita um agendamento de visita específico determinado pelo ID."
+        }
+      ],
+        "description": "Efetua a busca pelo ID, e após a response do servidor, é possível alterar os dados e enviá-los para que as alterações sejam guardadas.",
+        "parameters": [
+          {
+            "name": "_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "cliente": {
+                  "type": "string",
+                  "example": "User Test"
+                },
+                "imovel_id": {
+                  "type": "number",
+                  "example": "1"
+                },
+                "date": {
+                  "type": "date",
+                  "example": "YYYY-MM-DD HH:MM"
+                },
+                "created_at": {
+                  "type": "date",
+                  "example": "null"
+                },
+                "updated_at": {
+                  "type": "date",
+                  "example": "null"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "201": {
+            "description": "Solicitação efetuada com sucesso!!"
+          },
+          "400": {
+            "description": "Ocorreu erro ao efetuar a sua requisição!"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          {
+          "description" : "Efetua a exclusão de  um agendamento de visita específico determinado pelo ID."
+        }
+      ],
+      "description": "Efetua a busca pelo ID, e após a response do servidor, executa a exclusão dos dados referentes ao agendamento.",
+        "parameters": [
+          {
+            "name": "_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "201": {
+            "description": "Solicitação efetuada com sucesso!!"
+          },
+          "400": {
+            "description": "Ocorreu erro ao efetuar a sua solicitação!"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {}
+}

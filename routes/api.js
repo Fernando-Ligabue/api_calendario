@@ -11,11 +11,11 @@ router.get("/agendamentos", agendamentoController.index)
 
 router.get("/agendamentos/:id", agendamentoController.show)
 
-router.post("/agendamentos", agendamentoController.store) 
+router.post("/agendamentos", agendamentoController.store)
 
-router.put("/agendamentos/:_id", agendamentoController.update) 
+router.put("/agendamentos/:_id", agendamentoController.update)
 
-router.delete("/agendamentos/:_id", agendamentoController.destroy) 
+router.delete("/agendamentos/:_id", agendamentoController.destroy)
 
 
 module.exports = router

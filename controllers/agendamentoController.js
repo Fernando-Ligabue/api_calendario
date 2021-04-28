@@ -1,16 +1,18 @@
 const Agendamento = require("../models/agendamento.js")
 
+//métodos para CRUD
+
 const show = (req, res) => {
     Agendamento.findById(req.params.id).then((agendamento) => {
         res.json(agendamento ? agendamento : {})
-    }).catch(() => res.status(400).json({ error: "Ocorreu um erro ao efetuar o agendamento, verifique os dados!" }))
+    }).catch(() => res.status(400).json({ error: "Ocorreu um erro ao executar a sua solicitação." }))
 }
 
 const store = (req, res) => {
     const agendamento = new Agendamento({ cliente: req.body.cliente, imovel_id: req.body.imovel_id, date: req.body.date });
     agendamento.save().then(() => {
-        console.log('Agendamento salvo com sucesso!!')
-        res.status(201).json({ error: 'Agendamento criado na base de dados com sucesso!!' })
+        console.log('Agendamento efetuado com sucesso!!')
+        res.status(201).json({ error: 'Agendamento efetuado com sucesso!!' })
     }).catch((e) => res.status(400).json({ error: 'Ocorreu erro ao efetuar o agendamento!!' }))
 }
 
