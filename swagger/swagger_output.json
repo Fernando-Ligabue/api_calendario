@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "version": "1.0.0",
-    "title": "REST API",
+    "title": "REST API AGENDAMENTOS ",
     "description": "Documentação de API utiizada para agendamentos de visitas e outros serviços. Possibilita agendar, editar e excluir registros efetuados. Utiliza protocolo HTTP com os verbos GET, POST, PUT e DELETE."
   },
   "host": "localhost:8001",
@@ -89,7 +89,7 @@
       "get": {
         "tags": [
           {
-          "description" : "Busca de um agendamento específico por ID"
+          "description" : "Busca um agendamento para visita específico determinado pelo ID."
         }
       ],
         "description": "Rota para solicitação de dados relativos a um agendamento específico, identificado pelo ID",
